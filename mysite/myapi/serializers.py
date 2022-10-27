@@ -9,7 +9,7 @@ class ShopSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
-    shop = ShopSerializer()
+    
     class Meta:
         model = Product
         fields = '__all__'

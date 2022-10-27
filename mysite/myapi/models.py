@@ -4,6 +4,8 @@ class Shop (models.Model):
     Sname = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
+    def __str__(self):
+        return self.Sname
 
 class Product (models.Model):
     shop = models.ForeignKey(Shop,
@@ -17,6 +19,8 @@ class Product (models.Model):
     category = models.CharField(max_length=100)
     image = models.ImageField(max_length=100)
     description = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
 
 class OrderItem (models.Model):
     product = models.ForeignKey(Product,
@@ -28,3 +32,4 @@ class OrderItem (models.Model):
     amount = models.FloatField(default=0)
     price = models.DecimalField(
         max_digits=10, decimal_places=2, blank=True, null=True)
+    
